@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "BioTechFront"
+    }
+  },
+  "defaultProject": "BioTechFront",
+  "cli": {
+    "analytics": false
+  }
 }
