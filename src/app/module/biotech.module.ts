@@ -2,6 +2,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
 import {ClienteCrudComponent} from './cliente/cliente.crud.component';
 import {ClienteService} from './services/cliente.service';
+import {LoginComponent} from './login/login.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   ],
   declarations: [
     ClienteCrudComponent,
+    LoginComponent
   ],
   providers: [
     ClienteService,
