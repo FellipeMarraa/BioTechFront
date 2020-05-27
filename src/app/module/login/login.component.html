@@ -236,18 +236,21 @@
   .form-row {
     display: flex;
     width: 100%;
+    color: white;
     margin: auto auto 6px;
   }
 
   .form-row input[type="text"], .form-row select {
     width: 300px;
     height: 30px;
+    border: 1px solid grey;
     background-color: rgb(46, 46, 46);
   }
 
   .form-row input[type="password"], .form-row select {
     width: 250px;
     height: 30px;
+    border: 1px solid grey;
     background-color: rgb(46, 46, 46);
   }
 
@@ -295,9 +298,7 @@
       transform: rotate(360deg);
     }
   }
-  .form-control{
-    border: green;
-  }
+
 
 </style>
 
@@ -327,8 +328,8 @@
       <br>
     </div>
   </form>
-  <a class="link" href="<%=request.getContextPath()%>/senha.jsp">Esqueceu sua senha ?</a><br><br>
-  <a class="link" href="<%=request.getContextPath()%>/cadastro.jsp">Cadastrar-se</a>
+  <a class="link" href="">Esqueceu sua senha ?</a><br><br>
+  <a class="link" href="http://localhost:63342/BioTechFront/src/app/module/cliente/cliente.crud.component.html?_ijt=p9mu2t6p403io87o6a9k4iocnu">Cadastrar-se</a>
   <div style="margin-top: 40px">
   </div>
 </div>
