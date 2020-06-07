@@ -1,50 +1,63 @@
-h3{
+h3 {
   margin-top: 80px;
   text-align: center;
   color: orangered;
 }
-#logo{
+
+#logo {
   width: 200px;
   align-self: center;
   margin: auto;
   display: block;
   padding: 10px;
   padding-bottom: 30px;
-  
+
 }
-form{
+
+form {
   padding: 10px;
 }
-#entrar{
+
+#entrar {
   margin-top: 20px;
   color: orangered;
 }
-#sem-login{
+
+#sem-login {
   margin-top: -5px;
   color: orangered;
 }
-#cadastrar{
+
+#cadastrar {
   margin-top: 5px;
   color: orangered;
 }
-#email{
-color: orangered;
--moz-border-radius: 50px;
--webkit-border-radius: 50px;
-border-radius: 10px;
+
+#email {
+  color: orangered;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 10px;
 }
-#senha{
-color: orangered;
--moz-border-radius: 50px;
--webkit-border-radius: 50px;
-border-radius: 10px;
-margin-top: 10px;
+
+#senha {
+  color: orangered;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 10px;
+  margin-top: 10px;
 }
-#senha-label{
+
+#senha-label {
   color: orangered;
 }
-.selected{
- color: orangered;
+
+.selected {
+  color: orangered;
+}
+
+.a {
+  color : orangered;
 }
 
 
