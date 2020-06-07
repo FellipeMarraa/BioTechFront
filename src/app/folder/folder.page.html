@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true" id="background">
+  <h3>Biotech Academia</h3>
+  <img src="assets/img/pagina-inicial.png" alt="logo" id="logo">
+
+  <form>
+    <ion-item id="email">
+      <ion-label position="stacked" clearInput>Email : </ion-label>
+      <ion-input required="true" type="email"></ion-input>
+    </ion-item>
+    <ion-item id="senha">
+      <ion-label position="stacked" id="senha">Senha</ion-label>
+      <ion-input required="true" id="senha-label" type="password" ></ion-input>
+    </ion-item>
+    <ion-button id="entrar" expand="block" size="small" fill="default" color="ligth"> <a routerLink="/categorias">Entrar</a></ion-button>
+  </form>
+  <ion-button id="sem-login" expand="block" size="small" fill="default" color="ligth" ionBlur>Cadastrar</ion-button>
+  <ion-button id="cadastrar" expand="block" size="small" fill="default" color="ligth" ionBlur>Entrar sem login</ion-button>
+
+
+
+</ion-content>

@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title id="titulo">Categorias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="button" ion-item *ngFor="let item of items">
+  <ion-list>
+    <button id="button">
+      <ion-thumbnail item-start>
+        <img src="{{imgUrl}}/cat{{item.id}}.png">
+      </ion-thumbnail>
+        <b><h2>{{ item.nome }}</h2></b>
+    </button>
+  </ion-list>
+</ion-content>
