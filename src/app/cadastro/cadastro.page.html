@@ -1,18 +1,41 @@
 <ion-content [fullscreen]="true" id="background">
+
     <h3>Cadastro</h3>
     <form (ngSubmit)="efetuaCadastro();$event.preventDefault">
         <ion-item id="nome">
-            <ion-label position="stacked">Nome:</ion-label>
-            <ion-input [(ngModel)]="cliente.nome" required="true" type="text" name="nome"></ion-input>
+            <ion-label style="color: black" position="stacked">Nome:
+                <ion-text *ngIf="errosNome.length>0" style="color:red">{{ errosNome }}</ion-text>
+            </ion-label>
+            <ion-input [(ngModel)]="cliente.nome" required="true" type="text" name="nome">
+            </ion-input>
         </ion-item>
+
+        <ion-item id="telefone">
+            <ion-label style="color: black" position="stacked">Telefone:
+                <ion-text *ngIf="errosTelefone.length >0" style="color:red">{{ errosTelefone }}</ion-text>
+            </ion-label>
+            <ion-input [(ngModel)]="cliente.telefone" required="true" type="text" name="telefone"></ion-input>
+        </ion-item>
+
         <ion-item id="email">
-            <ion-label position="stacked">Email:</ion-label>
+            <ion-label style="color: black" position="stacked">Email:
+                <ion-text *ngIf="errosEmail.length >0" style="color:red">{{ errosEmail}}</ion-text>
+            </ion-label>
             <ion-input [(ngModel)]="cliente.email" required="true" type="email" name="email"></ion-input>
         </ion-item>
 
         <ion-item id="senha">
-            <ion-label position="stacked" >Senha:</ion-label>
+            <ion-label style="color: black" position="stacked">Senha:
+                <ion-text *ngIf="errosSenha.length >0" style="color:red">{{ errosSenha }}</ion-text>
+            </ion-label>
             <ion-input [(ngModel)]="cliente.senha" required="true" id="senha-label" type="password" name="senha"></ion-input>
+        </ion-item>
+
+        <ion-item id="senha">
+            <ion-label style="color: black" position="stacked">Confirme sua senha:
+                <ion-text *ngIf="errosConfirmeSenha.length >0" style="color:red">{{ errosConfirmeSenha }}</ion-text>
+            </ion-label>
+            <ion-input [(ngModel)]="cliente.confirmaSenha" required="true" type="password" name="senha"></ion-input>
         </ion-item>
 
     </form>

@@ -2,15 +2,16 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {API_CONFIG} from 'src/config/api.config';
 import {Observable} from 'rxjs';
-import {CategoriaDTO} from 'src/models/categoria.dto';
-import {ClienteDto} from '../../models/cliente.dto';
+import {clienteDTO} from '../../models/cliente.dto';
 
 @Injectable()
 export class ClienteService {
     constructor(public http: HttpClient) {}
 
-    insert(obj: ClienteDto) {
+    //obj esta vindo nome email e senha certinho , agora temos que ver ele batendo la no back como mesmo clienteDTO
+    insert(obj: clienteDTO) {
         return this.http.post(
+            //verificar o barramento que esta no backend
             `${API_CONFIG.baseUrl}/clientes`,
             obj,
             {
@@ -20,11 +21,7 @@ export class ClienteService {
         );
     }
 
-    findByEmail(email: string): Observable<ClienteDto> {
-        return this.http.get<ClienteDto>(API_CONFIG.baseUrl + '/clientes/email?value=${email}');
+    findByEmail(email: string): Observable<clienteDTO> {
+        return this.http.get<clienteDTO>(API_CONFIG.baseUrl + '/clientes/email?value=${email}');
     }
-
-    // findAll() : Observable<CategoriaDTO[]> {
-    //     return this.http.get<CategoriaDTO[]>(`${API_CONFIG.baseUrl}/categorias`);
-    // }
 }

@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NavController} from '@ionic/angular';
-import {ClienteDto} from '../../models/cliente.dto';
 import {ClienteService} from '../../services/domain/cliente.service';
-import {subscribeOn} from 'rxjs/operators';
+import {clienteDTO} from '../../models/cliente.dto';
 
 @Component({
     selector: 'app-cadastro',
@@ -11,12 +10,20 @@ import {subscribeOn} from 'rxjs/operators';
 })
 export class CadastroPage implements OnInit {
 
-
-    cliente: ClienteDto = {
+    cliente: clienteDTO = {
+        id: null,
         nome: '',
         email: '',
-        senha: ''
+        senha: '',
+        confirmaSenha: '',
+        telefone: ''
     };
+    errosTotal: string [] = [];
+    errosNome: string [] = [];
+    errosEmail: string [] = [];
+    errosSenha: string [] = [];
+    errosConfirmeSenha: string [] = [];
+    errosTelefone: string [] = [];
 
     constructor(public navCtrl: NavController,
                 public clienteService: ClienteService) {
@@ -27,16 +34,47 @@ export class CadastroPage implements OnInit {
 
 
     efetuaCadastro() {
-        console.log(this.cliente);
+        this.validation();
+
         this.clienteService.insert(this.cliente).subscribe(request => {
-            if(request){
-                console.log("cadastro efetuado com sucesso")
-            }else{
-                console.log("cadastro falho")
+            if (request) {
+                console.log('cadastro efetuado com sucesso');
+            } else {
+                console.log('cadastro falho');
             }
         });
-        this.navCtrl.navigateRoot('/folder/Inbox');
+
+        if (this.errosTotal.length < 0) {
+            this.navCtrl.navigateRoot('/folder/Inbox');
+        }
     }
 
+
+    validation() {
+        if (this.cliente.nome == '') {
+            this.errosNome.push('*Nome é Obrigatorio');
+            this.errosTotal.push('*Nome é Obrigatorio');
+        }
+
+        if (this.cliente.email == '') {
+            this.errosEmail.push('*Email é Obrigatorio');
+            this.errosTotal.push('*Email é Obrigatorio');
+        }
+
+        if (this.cliente.senha == '') {
+            this.errosSenha.push('*Senha é Obrigatorio');
+            this.errosTotal.push('*Senha é Obrigatorio');
+        }
+
+        if (this.cliente.telefone == '') {
+            this.errosTelefone.push('*Telefone é Obrigatorio');
+            this.errosTotal.push('*Telefone é Obrigatorio');
+        }
+
+        if (this.cliente.senha != this.cliente.confirmaSenha) {
+            this.errosConfirmeSenha.push('*As senhas não conferem');
+            this.errosTotal.push('*As senhas sao diferentes');
+        }
+    }
 
 }
