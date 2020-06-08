@@ -16,6 +16,7 @@ export class FolderPage implements OnInit {
         email: '',
         senha: ''
     };
+    erros: string [] = [];
 
 
     constructor(private activatedRoute: ActivatedRoute,
@@ -28,17 +29,25 @@ export class FolderPage implements OnInit {
         this.folder = this.activatedRoute.snapshot.paramMap.get('id');
     }
 
+    validation() {
+        if (this.credenciais.email == '' || this.credenciais.senha == '') {
+            this.erros.push('*Email ou senha invalidos');
+        }
+    }
+
     login() {
+        this.validation();
         //ao descomentar esse metodo ele tem que bater la no back e fazer a validaçao
         // this.auth.authenticate(this.credenciais).subscribe(response => {
         //     this.auth.sucessfullLogin(response.headers.get('Authorization'));
         //     console.log(response.headers.get('Authorization'));
         // });
-        this.navCtrl.navigateRoot('/categorias');
+        if (this.erros.length == 0) {
+            this.navCtrl.navigateRoot('/categorias');
+        }
     }
 
     loginSemCadastro() {
-        //login sem cadastro apenas visualisar as categorias
         this.navCtrl.navigateRoot('/categorias');
     }
 

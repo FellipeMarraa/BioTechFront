@@ -18,46 +18,33 @@ form {
   padding: 10px;
 }
 
-#entrar {
+#entrar, #sem-login, #cadastrar {
   margin-top: 20px;
   color: orangered;
 }
 
-#sem-login {
-  margin-top: -5px;
-  color: orangered;
-}
 
-#cadastrar {
-  margin-top: 5px;
-  color: orangered;
-}
-
-#email {
-  color: orangered;
+#email, {
+  color: black;
   -moz-border-radius: 50px;
   -webkit-border-radius: 50px;
   border-radius: 10px;
 }
 
 #senha {
-  color: orangered;
+  color: black;
   -moz-border-radius: 50px;
   -webkit-border-radius: 50px;
   border-radius: 10px;
   margin-top: 10px;
 }
 
-#senha-label {
-  color: orangered;
-}
-
 .selected {
-  color: orangered;
+  color: black;
 }
 
 .a {
-  color : orangered;
+  color: black;
 }
 
 

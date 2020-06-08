@@ -3,12 +3,13 @@
     <img src="assets/img/pagina-inicial.png" alt="logo" id="logo">
 
     <form>
+        <p *ngIf="erros.length >0" style="color:red;margin-left: 10px">{{erros}}</p>
         <ion-item id="email">
-            <ion-label position="stacked">Email:</ion-label>
+            <ion-label style="color: black" position="stacked">Email:</ion-label>
             <ion-input required="true" type="email" [(ngModel)]="credenciais.email" name="email"></ion-input>
         </ion-item>
         <ion-item id="senha">
-            <ion-label position="stacked" id="senha">Senha:</ion-label>
+            <ion-label style="color: black" position="stacked" id="senha">Senha:</ion-label>
             <ion-input required="true" id="senha-label" type="password" [(ngModel)]="credenciais.senha" name="senha"></ion-input>
         </ion-item>
     </form>
