@@ -10,14 +10,14 @@ import { API_CONFIG } from 'src/config/api.config';
 })
 export class CategoriasPage implements OnInit {
 
-  imgUrl : string = API_CONFIG.imgBaseUrl;
+  imgUrl: string = API_CONFIG.imgBaseUrl;
 
   items: CategoriaDTO[];
 
-  constructor(public categoriaService : CategoriaService) { }
+  constructor(public categoriaService: CategoriaService) { }
 
   ngOnInit() {
-    this.categoriaService.findAll().subscribe(response => {this.items = response;}, error => {console.log(error);});
+    this.categoriaService.findAll().subscribe(response => {this.items = response; }, error => {console.log(error);});
   }
 
 }

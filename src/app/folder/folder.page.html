@@ -4,17 +4,16 @@
 
     <form>
         <ion-item id="email">
-            <ion-label position="stacked" clearInput>Email:</ion-label>
-            <ion-input  required="true" type="email" [(ngModel)]="credenciais.email" name="email" ></ion-input>
+            <ion-label position="stacked">Email:</ion-label>
+            <ion-input required="true" type="email" [(ngModel)]="credenciais.email" name="email"></ion-input>
         </ion-item>
         <ion-item id="senha">
-            <ion-label  position="stacked" id="senha" >Senha:</ion-label>
+            <ion-label position="stacked" id="senha">Senha:</ion-label>
             <ion-input required="true" id="senha-label" type="password" [(ngModel)]="credenciais.senha" name="senha"></ion-input>
         </ion-item>
-        <ion-button id="entrar" expand="block" size="small" fill="default" color="ligth"><a style="color:orangered" routerLink="/categorias">Entrar</a></ion-button>
     </form>
-    <ion-button id="cadastrar" expand="block" size="small" fill="default" color="ligth" (click)="cadastra()"><a style="color:orangered">Cadastrar</a></ion-button>
-    <ion-button id="sem-login" expand="block" size="small" fill="default" color="ligth">Entrar sem login</ion-button>
 
-
+    <ion-button id="entrar" expand="block" size="small" fill="default" color="ligth" (click)="login()">Entrar</ion-button>
+    <ion-button id="cadastrar" expand="block" size="small" fill="default" color="ligth" (click)="cadastra()">Cadastrar</ion-button>
+    <ion-button id="sem-login" expand="block" size="small" fill="default" color="ligth" (click)="loginSemCadastro()">Entrar sem login</ion-button>
 </ion-content>

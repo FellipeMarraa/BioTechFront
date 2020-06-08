@@ -1,0 +1,20 @@
+<ion-content [fullscreen]="true" id="background">
+    <h3>Cadastro</h3>
+    <form (ngSubmit)="efetuaCadastro();$event.preventDefault">
+        <ion-item id="nome">
+            <ion-label position="stacked">Nome:</ion-label>
+            <ion-input [(ngModel)]="cliente.nome" required="true" type="text" name="nome"></ion-input>
+        </ion-item>
+        <ion-item id="email">
+            <ion-label position="stacked">Email:</ion-label>
+            <ion-input [(ngModel)]="cliente.email" required="true" type="email" name="email"></ion-input>
+        </ion-item>
+
+        <ion-item id="senha">
+            <ion-label position="stacked" >Senha:</ion-label>
+            <ion-input [(ngModel)]="cliente.senha" required="true" id="senha-label" type="password" name="senha"></ion-input>
+        </ion-item>
+
+    </form>
+    <ion-button id="cadastrar" expand="block" size="small" fill="default" color="ligth" (click)="efetuaCadastro()">Cadastrar-se</ion-button>
+</ion-content>
