@@ -7,17 +7,23 @@ import {ClienteDto} from '../../models/cliente.dto';
 
 @Injectable()
 export class ClienteService {
+    constructor(public http: HttpClient) {}
 
-    constructor(public http: HttpClient) {
-
+    insert(obj: ClienteDto) {
+        return this.http.post(
+            `${API_CONFIG.baseUrl}/clientes`,
+            obj,
+            {
+                observe: 'response',
+                responseType: 'text'
+            }
+        );
     }
 
-    insert(cliente: ClienteDto) {
-//esse metodo tem que bater la no back e salvar o cliente
+    findByEmail(email: string): Observable<ClienteDto> {
+        return this.http.get<ClienteDto>(API_CONFIG.baseUrl + '/clientes/email?value=${email}');
     }
 
-
-    //
     // findAll() : Observable<CategoriaDTO[]> {
     //     return this.http.get<CategoriaDTO[]>(`${API_CONFIG.baseUrl}/categorias`);
     // }

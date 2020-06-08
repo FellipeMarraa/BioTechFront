@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NavController} from '@ionic/angular';
 import {ClienteDto} from '../../models/cliente.dto';
 import {ClienteService} from '../../services/domain/cliente.service';
+import {subscribeOn} from 'rxjs/operators';
 
 @Component({
     selector: 'app-cadastro',
@@ -27,8 +28,13 @@ export class CadastroPage implements OnInit {
 
     efetuaCadastro() {
         console.log(this.cliente);
-
-        this.clienteService.insert(this.cliente);
+        this.clienteService.insert(this.cliente).subscribe(request => {
+            if(request){
+                console.log("cadastro efetuado com sucesso")
+            }else{
+                console.log("cadastro falho")
+            }
+        });
         this.navCtrl.navigateRoot('/folder/Inbox');
     }
 
