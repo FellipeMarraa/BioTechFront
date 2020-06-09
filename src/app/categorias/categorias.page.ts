@@ -2,9 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CategoriaService} from 'src/services/domain/categoria.service';
 import {CategoriaDTO} from 'src/models/categoria.dto';
 import {API_CONFIG} from 'src/config/api.config';
-import {ExercicioDTO} from '../../models/exercicio.dto';
-import {NavController, NavParams} from '@ionic/angular';
-import {ActivatedRoute, Params} from '@angular/router';
+import {NavController} from '@ionic/angular';
 import {StorageService} from '../../services/storage.service.';
 
 @Component({
@@ -44,7 +42,7 @@ export class CategoriasPage implements OnInit {
 
 //====================================================================================
     constructor(public categoriaService: CategoriaService,
-                public storage:StorageService,
+                public storage: StorageService,
                 public navCtrl: NavController) {
     }
 
@@ -60,7 +58,7 @@ export class CategoriasPage implements OnInit {
 
 
     showExercicios(categoria_id: string) {
-        this.storage.setLocalUser(categoria_id)
+        this.storage.setLocalUser(categoria_id);
         this.navCtrl.navigateRoot('/exercicios');
     }
 

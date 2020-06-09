@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NavController, NavParams} from '@ionic/angular';
+import {NavController} from '@ionic/angular';
 import {ExercicioService} from '../../services/domain/exercicio.service';
 import {ExercicioDTO} from '../../models/exercicio.dto';
 import {StorageService} from '../../services/storage.service.';
@@ -14,7 +14,6 @@ export class ExerciciosPage implements OnInit {
     items: ExercicioDTO[];
 
     constructor(public navCtrl: NavController,
-                public navParams: NavParams,
                 public storage: StorageService,
                 public exercicioService: ExercicioService) {
     }
