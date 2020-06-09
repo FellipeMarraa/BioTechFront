@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NavController, NavParams} from '@ionic/angular';
-import {ClienteService} from '../../services/domain/cliente.service';
+import {NavController} from '@ionic/angular';
 import {ExercicioService} from '../../services/domain/exercicio.service';
 import {ExercicioDTO} from '../../models/exercicio.dto';
 
@@ -18,16 +17,16 @@ export class ExerciciosPage implements OnInit {
     }
 
     ngOnInit(): void {
-        this.items = [
-            {
-                id: '1',
-                nome: 'rosca Direta'
-            },
-            {
-                id: '2',
-                nome: 'rosca testa'
-            }
-        ];
+        // this.items = [
+        //     {
+        //         id: '1',
+        //         nome: 'rosca Direta'
+        //     },
+        //     {
+        //         id: '2',
+        //         nome: 'rosca testa'
+        //     }
+        // ];
     }
 
 

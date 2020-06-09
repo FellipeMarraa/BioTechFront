@@ -52,17 +52,14 @@ export class CategoriasPage implements OnInit {
 
     ngOnInit() {
         this.items = [];
-        this.items.push(this.item1, this.item2, this.item3, this.item4);
-        // this.categoriaService.findAll().subscribe(response => {
-        //     this.items = response;
-        // }, error => {
-        //     console.log(error);
-        // });
+        // this.items.push(this.item1, this.item2, this.item3, this.item4);
+        this.categoriaService.findAll().subscribe(response => {
+            this.items = response;
+        }, error => {
+            console.log(error);
+        });
     }
 
-    teste() {
-        //Libera uma lista de exercicios de cada item
-    }
 
     showExercicios(categoria_id: string) {
         //Tenho que descobrir como que passa essa atributo pela url
