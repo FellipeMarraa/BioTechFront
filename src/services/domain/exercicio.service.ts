@@ -11,6 +11,6 @@ export class ExercicioService {
     }
 
     findByCategoria(id: string) {
-        return this.http.get<CategoriaDTO[]>(`${API_CONFIG.baseUrl}/categorias/2`);
+        return this.http.get<CategoriaDTO[]>(`${API_CONFIG.baseUrl}/categorias/${id}`);
     }
 }

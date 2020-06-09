@@ -4,6 +4,8 @@ import {CategoriaDTO} from 'src/models/categoria.dto';
 import {API_CONFIG} from 'src/config/api.config';
 import {NavController} from '@ionic/angular';
 import {StorageService} from '../../services/storage.service.';
+import {LocalUser} from '../../models/local_user';
+import {clienteDTO} from '../../models/cliente.dto';
 
 @Component({
     selector: 'app-categorias',
@@ -15,11 +17,7 @@ export class CategoriasPage implements OnInit {
     items: CategoriaDTO[];
 
     //==================================Ignora pois o Bruno nao tem banco de dados na maquina
-    // exercicio1: ExercicioDTO = {
-    //     id: '1',
-    //     nome: 'Rosca Direta'
-    // };
-    //
+
     // item1: CategoriaDTO = {
     //     id: '1',
     //     nome: 'Alongamento',
@@ -58,7 +56,13 @@ export class CategoriasPage implements OnInit {
 
 
     showExercicios(categoria_id: string) {
-        this.storage.setLocalUser(categoria_id);
+
+        let local: LocalUser = {
+            id: categoria_id,
+            nome: 'tt',
+        };
+
+        this.storage.setLocalUser(local);
         this.navCtrl.navigateRoot('/exercicios');
     }
 

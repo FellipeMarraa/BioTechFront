@@ -10,7 +10,6 @@ import {StorageService} from '../../services/storage.service.';
     styleUrls: ['./exercicios.page.scss'],
 })
 export class ExerciciosPage implements OnInit {
-
     items: ExercicioDTO[];
 
     constructor(public navCtrl: NavController,
@@ -23,18 +22,16 @@ export class ExerciciosPage implements OnInit {
         this.exercicioService.findByCategoria(localStorage.id).subscribe(response => {
             this.items = response['exercicios'];
         });
-
-
-        this.items = [
-            // {
-            //     id: '1',
-            //     nome: 'rosca Direta'
-            // },
-            // {
-            //     id: '2',
-            //     nome: 'rosca testa'
-            // }
-        ];
+        // this.items = [
+        //     {
+        //         id: '1',
+        //         nome: 'rosca Direta'
+        //     },
+        //     {
+        //         id: '2',
+        //         nome: 'rosca testa'
+        //     }
+        // ];
     }
 
 
