@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NavController} from '@ionic/angular';
+import {NavController, NavParams} from '@ionic/angular';
 import {ExercicioService} from '../../services/domain/exercicio.service';
 import {ExercicioDTO} from '../../models/exercicio.dto';
 
@@ -13,10 +13,15 @@ export class ExerciciosPage implements OnInit {
     items: ExercicioDTO[];
 
     constructor(public navCtrl: NavController,
+                public navParams: NavParams,
                 public exercicioService: ExercicioService) {
     }
 
     ngOnInit(): void {
+        let id_categoria = this.navParams.get('id_categoria');
+        this.exercicioService.findByCategoria(id_categoria).subscribe(response => {
+            this.items = response['content'];
+        });
         // this.items = [
         //     {
         //         id: '1',
@@ -31,12 +36,9 @@ export class ExerciciosPage implements OnInit {
 
 
     ionViewDidLoad() {
-        //Teste par ver se o back esta funcionando
-        //Testar essa requisição no postman localHost:8080/exercicios?categoria=2
-        // let id_categoria = this.navparams.get('id_categoria');
-        // this.exercicioService.findByCategoria(id_categoria).subscribe(response => {
-        //     this.items = response['content'];
-        // });
+        // Teste par ver se o back esta funcionando
+        // Testar essa requisição no postman localHost:8080/exercicios?categoria=2
+
     }
 
 }
