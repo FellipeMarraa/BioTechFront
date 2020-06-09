@@ -29,11 +29,6 @@ export class FolderPage implements OnInit {
         this.folder = this.activatedRoute.snapshot.paramMap.get('id');
     }
 
-    validation() {
-        if (this.credenciais.email == '' || this.credenciais.senha == '') {
-            this.erros.push('*Email ou senha invalidos');
-        }
-    }
 
     login() {
         this.validation();
@@ -56,6 +51,12 @@ export class FolderPage implements OnInit {
         this.navCtrl.navigateRoot('/cadastro');
     }
 
+    validation() {
+        this.erros = [];
+        if (this.credenciais.email == '' || this.credenciais.senha == '') {
+            this.erros.push('*Email ou senha invalidos');
+        }
+    }
 
     ionViewWillEnter() {
         this.menu.enable(false);

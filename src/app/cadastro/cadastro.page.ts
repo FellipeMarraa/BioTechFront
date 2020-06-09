@@ -42,15 +42,17 @@ export class CadastroPage implements OnInit {
             } else {
                 console.log('cadastro falho');
             }
+
         });
 
-        if (this.errosTotal.length < 0) {
+        if (this.errosTotal.length == 0) {
             this.navCtrl.navigateRoot('/folder/Inbox');
         }
     }
 
 
-    validation() {
+    validation(): boolean {
+        this.errosTotal = [];
         if (this.cliente.nome == '') {
             this.errosNome.push('*Nome é Obrigatorio');
             this.errosTotal.push('*Nome é Obrigatorio');
@@ -75,6 +77,10 @@ export class CadastroPage implements OnInit {
             this.errosConfirmeSenha.push('*As senhas não conferem');
             this.errosTotal.push('*As senhas sao diferentes');
         }
+        if (this.errosTotal.length > 0) {
+            return false;
+        }
+        return true;
     }
 
 }
