@@ -13,6 +13,7 @@ import {CategoriaService} from 'src/services/domain/categoria.service';
 import {AuthService} from '../services/auth.service';
 import {StorageService} from '../services/storage.service.';
 import {ClienteService} from '../services/domain/cliente.service';
+import {ExercicioService} from '../services/domain/exercicio.service';
 
 @NgModule({
     declarations: [AppComponent],
@@ -30,7 +31,8 @@ import {ClienteService} from '../services/domain/cliente.service';
         CategoriaService,
         AuthService,
         StorageService,
-        ClienteService
+        ClienteService,
+        ExercicioService
     ],
     bootstrap: [AppComponent]
 })

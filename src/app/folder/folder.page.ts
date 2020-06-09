@@ -21,7 +21,6 @@ export class FolderPage implements OnInit {
 
     constructor(private activatedRoute: ActivatedRoute,
                 public navCtrl: NavController,
-                public auth: AuthService,
                 public menu: MenuController) {
     }
 
@@ -55,6 +54,20 @@ export class FolderPage implements OnInit {
         this.erros = [];
         if (this.credenciais.email == '' || this.credenciais.senha == '') {
             this.erros.push('*Email ou senha invalidos');
+        }
+        // if (this.IsEmail(this.credenciais.email) == false) {
+        //     this.erros.push('*Email invalido');
+        // } else {
+        //     this.erros = [];
+        // }
+    }
+
+    IsEmail(email) {
+        var check = /@[w-]+./;
+        if (((email.search(check)) == -1)) {
+            return false;
+        } else {
+            return true;
         }
     }
 

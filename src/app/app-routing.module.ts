@@ -19,6 +19,10 @@ const routes: Routes = [
         path: 'cadastro',
         loadChildren: () => import('./cadastro/cadastro.module').then(m => m.CadastroPageModule)
     },
+    {
+        path: 'exercicios',
+        loadChildren: () => import('./exercicios/exercicios.module').then(m => m.ExerciciosPageModule)
+    },
 
 ];
 
