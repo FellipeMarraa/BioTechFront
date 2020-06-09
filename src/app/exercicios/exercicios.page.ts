@@ -21,7 +21,7 @@ export class ExerciciosPage implements OnInit {
     ngOnInit(): void {
         let localStorage = this.storage.getLocalUser();
         this.exercicioService.findByCategoria(localStorage.id).subscribe(response => {
-            this.items = response['content'];
+            this.items = response['exercicios'];
         });
 
 
