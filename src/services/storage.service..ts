@@ -14,11 +14,11 @@ export class StorageService {
         }
     }
 
-    setLocalUser(objeto: LocalUser) {
-        if (objeto == null) {
+    setLocalUser(id_categoria: string) {
+        if (id_categoria == null) {
             localStorage.removeItem(STORAGE_KEYS.localUser);
         } else {
-            localStorage.setItem(STORAGE_KEYS.localUser, JSON.stringify(objeto));
+            localStorage.setItem(STORAGE_KEYS.localUser, JSON.stringify(id_categoria));
         }
     }
 

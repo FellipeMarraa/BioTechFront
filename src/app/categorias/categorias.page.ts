@@ -4,7 +4,8 @@ import {CategoriaDTO} from 'src/models/categoria.dto';
 import {API_CONFIG} from 'src/config/api.config';
 import {ExercicioDTO} from '../../models/exercicio.dto';
 import {NavController, NavParams} from '@ionic/angular';
-import {Params} from '@angular/router';
+import {ActivatedRoute, Params} from '@angular/router';
+import {StorageService} from '../../services/storage.service.';
 
 @Component({
     selector: 'app-categorias',
@@ -24,29 +25,26 @@ export class CategoriasPage implements OnInit {
     // item1: CategoriaDTO = {
     //     id: '1',
     //     nome: 'Alongamento',
-    //     exercicios: [this.exercicio1]
     // };
     //
     // item2: CategoriaDTO = {
     //     id: '2',
     //     nome: 'Abdominais',
-    //     exercicios: []
     // };
     //
     // item3: CategoriaDTO = {
     //     id: '3',
     //     nome: 'Bicbs',
-    //     exercicios: [this.exercicio1]
     // };
     //
     // item4: CategoriaDTO = {
     //     id: '4',
     //     nome: 'Tricbs   ',
-    //     exercicios: []
     // };
 
 //====================================================================================
     constructor(public categoriaService: CategoriaService,
+                public storage:StorageService,
                 public navCtrl: NavController) {
     }
 
@@ -62,7 +60,7 @@ export class CategoriasPage implements OnInit {
 
 
     showExercicios(categoria_id: string) {
-        //Tenho que descobrir como que passa essa atributo pela url
+        this.storage.setLocalUser(categoria_id)
         this.navCtrl.navigateRoot('/exercicios');
     }
 

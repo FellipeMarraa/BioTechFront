@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NavController, NavParams} from '@ionic/angular';
 import {ExercicioService} from '../../services/domain/exercicio.service';
 import {ExercicioDTO} from '../../models/exercicio.dto';
+import {StorageService} from '../../services/storage.service.';
 
 @Component({
     selector: 'app-exercicio',
@@ -14,24 +15,27 @@ export class ExerciciosPage implements OnInit {
 
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
+                public storage: StorageService,
                 public exercicioService: ExercicioService) {
     }
 
     ngOnInit(): void {
-        let id_categoria = this.navParams.get('id_categoria');
-        this.exercicioService.findByCategoria(id_categoria).subscribe(response => {
+        let localStorage = this.storage.getLocalUser();
+        this.exercicioService.findByCategoria(localStorage.id).subscribe(response => {
             this.items = response['content'];
         });
-        // this.items = [
-        //     {
-        //         id: '1',
-        //         nome: 'rosca Direta'
-        //     },
-        //     {
-        //         id: '2',
-        //         nome: 'rosca testa'
-        //     }
-        // ];
+
+
+        this.items = [
+            // {
+            //     id: '1',
+            //     nome: 'rosca Direta'
+            // },
+            // {
+            //     id: '2',
+            //     nome: 'rosca testa'
+            // }
+        ];
     }
 
 
