@@ -17,25 +17,25 @@ export class CategoriasPage implements OnInit {
 
     //==================================Ignora pois o Bruno nao tem banco de dados na maquina
 
-    item1: CategoriaDTO = {
-        id: '1',
-        nome: 'Alongamento',
-    };
-
-    item2: CategoriaDTO = {
-        id: '2',
-        nome: 'Abdominais',
-    };
-
-    item3: CategoriaDTO = {
-        id: '3',
-        nome: 'Bicbs',
-    };
-
-    item4: CategoriaDTO = {
-        id: '4',
-        nome: 'Tricbs   ',
-    };
+    // item1: CategoriaDTO = {
+    //     id: '1',
+    //     nome: 'Alongamento',
+    // };
+    //
+    // item2: CategoriaDTO = {
+    //     id: '2',
+    //     nome: 'Abdominais',
+    // };
+    //
+    // item3: CategoriaDTO = {
+    //     id: '3',
+    //     nome: 'Bicbs',
+    // };
+    //
+    // item4: CategoriaDTO = {
+    //     id: '4',
+    //     nome: 'Tricbs   ',
+    // };
 
 //====================================================================================
     constructor(public categoriaService: CategoriaService,
@@ -45,12 +45,12 @@ export class CategoriasPage implements OnInit {
 
     ngOnInit() {
         this.items = [];
-        this.items.push(this.item1, this.item2, this.item3, this.item4);
-        // this.categoriaService.findAll().subscribe(response => {
-        //     this.items = response;
-        // }, error => {
-        //     console.log(error);
-        // });
+        // this.items.push(this.item1, this.item2, this.item3, this.item4);
+        this.categoriaService.findAll().subscribe(response => {
+            this.items = response;
+        }, error => {
+            console.log(error);
+        });
     }
 
 
@@ -64,8 +64,5 @@ export class CategoriasPage implements OnInit {
         this.navCtrl.navigateRoot('/exercicios');
     }
 
-    logout(){
-        this.navCtrl.navigateRoot('/folder/inbox');
-    }
 
 }

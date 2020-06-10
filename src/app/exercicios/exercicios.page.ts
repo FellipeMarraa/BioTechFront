@@ -31,18 +31,9 @@ export class ExerciciosPage implements OnInit {
             //         nome: 'rosca testa'
             //     }
             // ];
+        }, error => {
+            console.log(error);
         });
-    }
-
-    backToCategoria(){
-        this.navCtrl.navigateRoot('/categorias');
-    }
-
-
-    ionViewDidLoad() {
-        // Teste par ver se o back esta funcionando
-        // Testar essa requisição no postman localHost:8080/exercicios?categoria=2
-
     }
 
 }
