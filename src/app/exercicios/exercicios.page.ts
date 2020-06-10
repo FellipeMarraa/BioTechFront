@@ -21,17 +21,21 @@ export class ExerciciosPage implements OnInit {
         let localStorage = this.storage.getLocalUser();
         this.exercicioService.findByCategoria(localStorage.id).subscribe(response => {
             this.items = response['exercicios'];
+            // this.items = [
+            //     {
+            //         id: '1',
+            //         nome: 'rosca Direta'
+            //     },
+            //     {
+            //         id: '2',
+            //         nome: 'rosca testa'
+            //     }
+            // ];
         });
-        // this.items = [
-        //     {
-        //         id: '1',
-        //         nome: 'rosca Direta'
-        //     },
-        //     {
-        //         id: '2',
-        //         nome: 'rosca testa'
-        //     }
-        // ];
+    }
+
+    backToCategoria(){
+        this.navCtrl.navigateRoot('/categorias');
     }
 
 

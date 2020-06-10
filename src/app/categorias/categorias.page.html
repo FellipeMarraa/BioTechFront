@@ -1,9 +1,9 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-title id="titulo">Categorias</ion-title>
-    </ion-toolbar>
+    <button>
+        <ion-icon name="arrow-back-outline" (click)="logout()"></ion-icon>
+    </button>
+    <ion-title style="margin-left: 250px" id="titulo">Categorias</ion-title>
 </ion-header>
-
 <ion-content id="button" ion-item *ngFor="let item of items">
     <ion-list>
         <button id="button" (click)="showExercicios(item.id)">
