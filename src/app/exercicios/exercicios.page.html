@@ -4,10 +4,10 @@
 <ion-content id="button" *ngFor="let item of items">
     <ion-list>
         <button id="button">
-            <!--            <ion-thumbnail>-->
-            <!--                <img style="width: 100%;height: 100%" src="{{item.id}}.png">-->
-            <!--            </ion-thumbnail>-->
             <b><h2>{{ item.nome }}</h2></b>
+            <ion-thumbnail>
+                <img style="width: 100%;height: 100%" src="{{imgUrl}}/exer{{item.id}}.gif">
+            </ion-thumbnail>
         </button>
     </ion-list>
 </ion-content>

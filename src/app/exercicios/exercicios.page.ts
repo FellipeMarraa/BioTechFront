@@ -3,6 +3,7 @@ import {NavController} from '@ionic/angular';
 import {ExercicioService} from '../../services/domain/exercicio.service';
 import {ExercicioDTO} from '../../models/exercicio.dto';
 import {StorageService} from '../../services/storage.service.';
+import {API_CONFIG} from '../../config/api.config';
 
 @Component({
     selector: 'app-exercicio',
@@ -11,6 +12,7 @@ import {StorageService} from '../../services/storage.service.';
 })
 export class ExerciciosPage implements OnInit {
     items: ExercicioDTO[];
+    imgUrl: string = API_CONFIG.imgBaseUrl;
 
     constructor(public navCtrl: NavController,
                 public storage: StorageService,
@@ -18,19 +20,21 @@ export class ExerciciosPage implements OnInit {
     }
 
     ngOnInit(): void {
+        // this.items = [
+        //     {
+        //         id: '1',
+        //         nome: 'rosca Direta'
+        //     },
+        //     {
+        //         id: '2',
+        //         nome: 'rosca testa'
+        //     }
+        // ];
+
         let localStorage = this.storage.getLocalUser();
         this.exercicioService.findByCategoria(localStorage.id).subscribe(response => {
             this.items = response['exercicios'];
-            // this.items = [
-            //     {
-            //         id: '1',
-            //         nome: 'rosca Direta'
-            //     },
-            //     {
-            //         id: '2',
-            //         nome: 'rosca testa'
-            //     }
-            // ];
+
         }, error => {
             console.log(error);
         });
