@@ -23,6 +23,7 @@ export class FolderPage implements OnInit {
     constructor(private activatedRoute: ActivatedRoute,
                 public navCtrl: NavController,
                 public clienteService: ClienteService,
+                public auth: AuthService,
                 public menu: MenuController) {
     }
 
@@ -46,7 +47,9 @@ export class FolderPage implements OnInit {
         //     this.auth.sucessfullLogin(response.headers.get('Authorization'));
         //     console.log(response.headers.get('Authorization'));
         // });
-
+        if (this.erros.length == 0) {
+            this.navCtrl.navigateRoot('/categorias');
+        }
     }
 
     loginSemCadastro() {

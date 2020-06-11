@@ -14,17 +14,19 @@ export class AuthService {
 
     authenticate(credenciais: CredenciaisDTO) {
         //vai la no back e valida o login
-        // return this.http.post(API_CONFIG.baseUrl + '/login', credenciais, {
-        //     observe: 'response', responseType: 'text'
-        // });
+         return this.http.post(API_CONFIG.baseUrl + '/login', credenciais, {
+             observe: 'response', responseType: 'text'
+         });
     }
 
     sucessfullLogin(authorizationValue: string) {
-        // let tok = authorizationValue.substring(7);
-        // let user: LocalUser = {
-        //     token: tok
-        // };
-        // this.storage.setLocalUser(user);
+         let tok = authorizationValue.substring(7);
+         let user: LocalUser = {
+             id:"",
+             nome:"",
+             token: tok
+         };
+         this.storage.setLocalUser(user);
     }
 
     logout() {
