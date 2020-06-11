@@ -22,8 +22,8 @@ export class FolderPage implements OnInit {
 
     constructor(private activatedRoute: ActivatedRoute,
                 public navCtrl: NavController,
-                public clienteService: ClienteService,
-                public auth: AuthService,
+         public clienteService: ClienteService,
+           public auth: AuthService,
                 public menu: MenuController) {
     }
 
@@ -36,9 +36,9 @@ export class FolderPage implements OnInit {
         this.validation();
         this.clienteService.findByEmail(this.credenciais.email).subscribe(resp => {
             if(resp){
-                if (this.erros.length == 0) {
+                
                     this.navCtrl.navigateRoot('/categorias');
-                }
+
             }
         })
 
