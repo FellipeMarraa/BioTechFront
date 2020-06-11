@@ -1,13 +1,15 @@
 <ion-header>
-    <ion-title style="margin-left: 190px" id="titulo">Categorias</ion-title>
+    <ion-title id="titulo"><h3>Categorias</h3></ion-title>
 </ion-header>
 <ion-content id="button" ion-item *ngFor="let item of items">
-    <ion-list>
+    <ion-list id="lista">
         <button id="button" (click)="showExercicios(item.id)">
-            <ion-thumbnail>
-                <img style="width: 100%;height: 100%" src="{{imgUrl}}/cat{{item.id}}.png">
-            </ion-thumbnail>
-            <b><h2>{{ item.nome }}</h2></b>
+
+                <img id="icone" src="{{imgUrl}}/cat{{item.id}}.png">
+
+                <b><h4 id="nome">{{ item.nome }}</h4></b>
         </button>
     </ion-list>
 </ion-content>
+
+
