@@ -58,6 +58,7 @@ export class CategoriasPage implements OnInit {
         let local: LocalUser = {
             id: categoria_id,
             nome: 'tt',
+            token: ''
         };
 
         this.storage.setLocalUser(local);
