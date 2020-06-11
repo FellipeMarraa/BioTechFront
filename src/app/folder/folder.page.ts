@@ -21,6 +21,7 @@ export class FolderPage implements OnInit {
 
     constructor(private activatedRoute: ActivatedRoute,
                 public navCtrl: NavController,
+                public auth: AuthService,
                 public menu: MenuController) {
     }
 
@@ -32,10 +33,10 @@ export class FolderPage implements OnInit {
     login() {
         this.validation();
         //ao descomentar esse metodo ele tem que bater la no back e fazer a validaçao
-        // this.auth.authenticate(this.credenciais).subscribe(response => {
-        //     this.auth.sucessfullLogin(response.headers.get('Authorization'));
-        //     console.log(response.headers.get('Authorization'));
-        // });
+        this.auth.authenticate(this.credenciais).subscribe(response => {
+             this.auth.sucessfullLogin(response.headers.get('Authorization'));
+             console.log(response.headers.get('Authorization'));
+         });
         if (this.erros.length == 0) {
             this.navCtrl.navigateRoot('/categorias');
         }
