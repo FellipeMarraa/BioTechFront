@@ -22,8 +22,8 @@ export class FolderPage implements OnInit {
 
     constructor(private activatedRoute: ActivatedRoute,
                 public navCtrl: NavController,
-         public clienteService: ClienteService,
-           public auth: AuthService,
+                public clienteService: ClienteService,
+                public auth: AuthService,
                 public menu: MenuController) {
     }
 
@@ -34,22 +34,7 @@ export class FolderPage implements OnInit {
 
     login() {
         this.validation();
-        this.clienteService.findByEmail(this.credenciais.email).subscribe(resp => {
-            if(resp){
-                
-                    this.navCtrl.navigateRoot('/categorias');
-
-            }
-        })
-
-        //ao descomentar esse metodo ele tem que bater la no back e fazer a validaçao
-        // this.auth.authenticate(this.credenciais).subscribe(response => {
-        //     this.auth.sucessfullLogin(response.headers.get('Authorization'));
-        //     console.log(response.headers.get('Authorization'));
-        // });
-        if (this.erros.length == 0) {
-            this.navCtrl.navigateRoot('/categorias');
-        }
+        this.navCtrl.navigateRoot('/categorias');
     }
 
     loginSemCadastro() {
@@ -70,9 +55,7 @@ export class FolderPage implements OnInit {
             if (resp) {
                 resp.forEach(respItem => {
                     if (respItem.email == this.credenciais.email) {
-                        if (this.erros.length == 0) {
-                            this.navCtrl.navigateRoot('/categorias');
-                        }
+                        this.erros.push('*Email invalido');
                     }
                 });
             }
