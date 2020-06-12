@@ -34,7 +34,7 @@ export class FolderPage implements OnInit {
 
     login() {
         this.validation();
-        this.navCtrl.navigateRoot('/categorias');
+
     }
 
     loginSemCadastro() {
@@ -51,15 +51,14 @@ export class FolderPage implements OnInit {
         if (this.credenciais.email == '' || this.credenciais.senha == '') {
             this.erros.push('*Email ou senha invalidos');
         }
-        this.clienteService.findAll().subscribe(resp => {
-            if (resp) {
-                resp.forEach(respItem => {
-                    if (respItem.email == this.credenciais.email) {
-                        this.erros.push('*Email invalido');
-                    }
-                });
-            }
-        });
+
+        if (this.credenciais.email != 'fellipemarra@hotmail.com' && this.credenciais.senha != '123') {
+            this.erros.push('*Email ou senha invalidos');
+        }
+
+        if (this.erros.length == 0) {
+            this.navCtrl.navigateRoot('/categorias');
+        }
     }
 
     ionViewWillEnter() {
