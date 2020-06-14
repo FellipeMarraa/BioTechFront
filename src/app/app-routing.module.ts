@@ -22,7 +22,11 @@ const routes: Routes = [
     {
         path: 'exercicios',
         loadChildren: () => import('./exercicios/exercicios.module').then(m => m.ExerciciosPageModule)
-    },
+    },  {
+    path: 'catlog',
+    loadChildren: () => import('./catlog/catlog.module').then( m => m.CatlogPageModule)
+  },
+
 
 ];
 

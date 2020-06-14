@@ -52,12 +52,12 @@ export class FolderPage implements OnInit {
             this.erros.push('*Email ou senha invalidos');
         }
 
-        if (this.credenciais.email != 'fellipemarra@hotmail.com' && this.credenciais.senha != '123') {
-            this.erros.push('*Email ou senha invalidos');
+        else if (this.credenciais.email != 'fellipemarra@hotmail.com' && this.credenciais.senha != '123') {
+            this.erros.push('*Senha invalida');
         }
 
-        if (this.erros.length == 0) {
-            this.navCtrl.navigateRoot('/categorias');
+        else if(this.erros.length == 0) {
+            this.navCtrl.navigateRoot('/catlog');
         }
     }
 
