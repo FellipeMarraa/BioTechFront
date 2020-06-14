@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true" id="background">
 
     <h3>Cadastro</h3>
-    <form (ngSubmit)="efetuaCadastro();$event.preventDefault">
+    <form id="cadastro" (ngSubmit)="efetuaCadastro();$event.preventDefault">
         <ion-item id="nome">
             <ion-label style="color: black" position="stacked">Nome:
                 <ion-text *ngIf="errosNome.length>0" style="color:red">{{ errosNome }}</ion-text>
@@ -40,4 +40,5 @@
 
     </form>
     <ion-button id="cadastrar" expand="block" size="small" fill="default" color="ligth" (click)="efetuaCadastro()">Cadastrar-se</ion-button>
+    <ion-button id="login" expand="block" size="small" fill="default" color="ligth" onClick="history.go(-1)">Login</ion-button>
 </ion-content>

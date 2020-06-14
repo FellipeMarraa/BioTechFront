@@ -5,26 +5,28 @@ h3 {
 }
 
 #logo {
-  width: 200px;
+  width: 150px;
   align-self: center;
   margin: auto;
   display: block;
   padding: 10px;
   padding-bottom: 30px;
-
 }
 
 form {
+  margin: 3px 50px;
   padding: 10px;
 }
 
 #entrar, #sem-login, #cadastrar {
-  margin-top: 20px;
+  margin-top: 10px;
   color: orangered;
 }
+#entrar{
+  margin-top: 35px;
+}
 
-
-#email, {
+#email {
   color: black;
   -moz-border-radius: 50px;
   -webkit-border-radius: 50px;
@@ -46,6 +48,6 @@ form {
 .a {
   color: black;
 }
-
-
-
+#background{
+  border: 1px solid black;
+}

@@ -1,8 +1,11 @@
-<ion-header>
-    <ion-title id="titulo"><h3>Categorias</h3></ion-title>
+<ion-header id="cabec">
+    <ion-title id="titulo"><h3>Categorias
+        <input id="back" type="image" src="assets/img/sair.png" onClick="history.go(-1)">
+        <input id="pesquisar" type="search" name="pesquisar" placeholder="Digite o código do exercício">
+    </h3></ion-title>
 </ion-header>
-<ion-content id="button" ion-item *ngFor="let item of items">
-    <ion-list id="lista">
+<ion-content id="button" ion-item>
+    <ion-list id="lista" *ngFor="let item of items">
         <button id="button" (click)="showExercicios(item.id)">
 
                 <img id="icone" src="{{imgUrl}}/cat{{item.id}}.png">

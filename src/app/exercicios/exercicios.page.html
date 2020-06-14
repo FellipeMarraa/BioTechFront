@@ -1,12 +1,17 @@
-<ion-header>
-    <ion-title id="titulo"><h1>Exercicios</h1></ion-title>
+<ion-header id="cabec">
+    <ion-title id="titulo"><h1>Exercicios
+        <b>
+        <ion-button id="back" size="small" fill="default" onClick="history.go(-1)">Voltar</ion-button>
+        </b>
+    </h1></ion-title> 
 </ion-header>
 <ion-content [scrollEvents]="true">
     <ion-list id="lista" *ngFor="let item of items">
         <b><h3 id="nomeexercicio">{{ item.nome }}</h3></b>
             <ion-item>
                 <img id="exer" src="{{imgUrl}}/exer{{item.id}}.gif">
-            </ion-item>
             <p id="descricao">{{item.descricao}}</p>
+            </ion-item>
+            
                 </ion-list>
             </ion-content>

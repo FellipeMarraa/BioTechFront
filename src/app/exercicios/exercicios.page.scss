@@ -1,8 +1,8 @@
 #exer{
 margin-top: 5px;
-width:95%;
-height: 95%;
-margin-left: 15px;
+width: 350px;
+height: 300px;
+margin-left: 67px;
 background-color: white;
 align-self: center;
 
@@ -29,5 +29,22 @@ align-self: center;
 
 *{
   background-color: white;
-
+  outline: none;
+}
+#back{
+  width: 60px;
+  height: 60px;
+  float: right;
+  outline: none;
+  margin-top: -15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: orangered;
+}
+#lista{
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+#cabec{
+  border: 1px solid black;
 }
