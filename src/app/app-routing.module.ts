@@ -26,6 +26,10 @@ const routes: Routes = [
     path: 'catlog',
     loadChildren: () => import('./catlog/catlog.module').then( m => m.CatlogPageModule)
   },
+  {
+    path: 'criarlist',
+    loadChildren: () => import('./criarlist/criarlist.module').then( m => m.CriarlistPageModule)
+  },
 
 
 ];

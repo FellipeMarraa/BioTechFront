@@ -41,6 +41,9 @@ export class CatlogPage implements OnInit {
         this.storage.setLocalUser(local);
         this.navCtrl.navigateRoot('/exercicios');
     }
+    criarlist(){
+        this.navCtrl.navigateRoot('/criarlist');
+    }
 
 
 }

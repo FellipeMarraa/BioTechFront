@@ -1,0 +1,17 @@
+<ion-header id="cabec">
+  <ion-title id="titulo"><h1>Criar lista de exercicios
+      <b>
+      <ion-button id="back" size="small" fill="default" onClick="history.go(-1)">Voltar</ion-button>
+      <input id="pesquisar" type="search" name="pesquisar" placeholder="Digite o código do exercício">
+      </b>
+  </h1></ion-title> 
+</ion-header>
+<ion-content id="lista">
+  <ion-list *ngFor="let item of items">
+    <ion-item>
+      <ion-label>{{item.nome}}</ion-label>
+    <ion-checkbox id="checkbox" slot="end"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <ion-button id="criar" expand="block">Criar Lista</ion-button>
+            </ion-content>

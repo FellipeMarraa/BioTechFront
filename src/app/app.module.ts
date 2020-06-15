@@ -14,6 +14,7 @@ import {AuthService} from '../services/auth.service';
 import {StorageService} from '../services/storage.service.';
 import {ClienteService} from '../services/domain/cliente.service';
 import {ExercicioService} from '../services/domain/exercicio.service';
+import { CriarListaService } from 'src/services/domain/criarlista.service';
 
 @NgModule({
     declarations: [AppComponent],
@@ -32,7 +33,8 @@ import {ExercicioService} from '../services/domain/exercicio.service';
         AuthService,
         StorageService,
         ClienteService,
-        ExercicioService
+        ExercicioService,
+        CriarListaService
     ],
     bootstrap: [AppComponent]
 })
